@@ -20,7 +20,7 @@ const Header = () => {
     // on devait le rejouter meme si elle rest enregistrer ?
     navigate('/');
   };
-
+   
   return (
     <header>
       <nav>
