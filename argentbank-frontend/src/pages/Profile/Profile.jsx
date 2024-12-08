@@ -58,7 +58,7 @@ function Profile() {
 
     fetchUserData(); // Appel de la fonction pour récupérer les données du profil
   }, [token, dispatch]); // Les dépendances pour useEffect
-
+ 
   return (
     <div className='profile-page'> 
       <main className='bg-dark'>
