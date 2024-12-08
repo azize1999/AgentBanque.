@@ -1,16 +1,16 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { authReducer } from './reducers/auth.reducer.jsx';
-import { userReducer } from './reducers/user.reducer.jsx';
+import { configureStore, combineReducers } from '@reduxjs/toolkit'; // Importation des fonctions de Redux Toolkit
+import { authReducer } from './reducers/auth.reducer.jsx'; // Importation du reducer d'authentification
+import { userReducer } from './reducers/user.reducer.jsx'; // Importation du reducer utilisateur
 
-// combiner Reducer
+// Combinaison des reducers en un seul reducer racine (rootReducer)
 const rootReducer = combineReducers({
-   auth: authReducer,
-   user: userReducer
+   auth: authReducer, // Reducer pour l'authentification
+   user: userReducer  // Reducer pour les données utilisateur
 });
 
-// Store-Konfiguration
+// Configuration du store Redux avec le reducer racine
 const store = configureStore({
-    reducer: rootReducer
+    reducer: rootReducer, // Associe le reducer racine au store
 });
 
-export default store;
+export default store; // Exportation du store pour l'utiliser dans l'application
