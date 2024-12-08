@@ -60,7 +60,7 @@ function Profile() {
   }, [token, dispatch]); // Les dépendances pour useEffect
 
   return (
-    <div className='profile-page'>
+    <div className='profile-page'> 
       <main className='bg-dark'>
         {/* Composant pour éditer le nom d'utilisateur */}
         <EditUsername />
