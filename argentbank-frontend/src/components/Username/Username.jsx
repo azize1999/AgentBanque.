@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"; // Importation des hooks Redux pour accéder au store et dispatcher des actions
-import { updateUsername } from '../../redux/actions/user.actions.jsx'; // Action Redux pour mettre à jour le nom d'utilisateur
+import { updateUsername } from '../../redux/actions/user.actions.js'; // Action Redux pour mettre à jour le nom d'utilisateur
 import "./Username.scss"; // Importation du fichier de style SCSS pour le composant ChangeUsername
 
 /**
@@ -32,7 +32,7 @@ function ChangeUsername() {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorisation: `Bearer ${token}`, // Envoie le token pour authentifier la requête
+          Authorization: `Bearer ${token}`, // Envoie le token pour authentifier la requête
         },
         body: JSON.stringify({ userName }), // Envoie le nouveau nom d'utilisateur en format JSON
       });

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'; // Importation des hooks Redux pour accéder au store et dispatcher des actions
-import { userProfile } from '../../redux/actions/user.actions.jsx'; // Action pour mettre à jour le profil utilisateur dans le store
+import { userProfile } from '../../redux/actions/user.actions.js'; // Action pour mettre à jour le profil utilisateur dans le store
 import UserAccount from '../../components/UserAccount/UserAccount.jsx'; // Importation du composant UserAccount pour afficher les comptes
 import AccountData from '../../data/AccountData.json'; // Importation des données de compte depuis un fichier JSON
 import EditUsername from '../../components/Username/Username.jsx'; // Importation du composant pour éditer le nom d'utilisateur
@@ -27,7 +27,7 @@ function Profile() {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
-            'Authorisation': `Bearer ${token}`, // Envoie le token pour authentifier la requête
+            'Authorization': `Bearer ${token}`, // Envoie le token pour authentifier la requête
           },
         });
 
@@ -58,9 +58,9 @@ function Profile() {
 
     fetchUserData(); // Appel de la fonction pour récupérer les données du profil
   }, [token, dispatch]); // Les dépendances pour useEffect
- 
+
   return (
-    <div className='profile-page'> 
+    <div className='profile-page'>
       <main className='bg-dark'>
         {/* Composant pour éditer le nom d'utilisateur */}
         <EditUsername />
