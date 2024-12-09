@@ -1,17 +1,17 @@
-import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from "../actions/type.actions"; // Importation des types d'actions
+import { LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT } from "../actions/type.actions"; 
 
-/* État initial pour l'authentification */
+
 const initialState = {
-    status: "VOID",       // État initial de la requête
-    isConnected: false,   // Statut de connexion de l'utilisateur
-    token: null,          // Token d'authentification
-    error: null,          // Message d'erreur
+    status: "VOID",       
+    isConnected: false,   
+    token: null,          
+    error: null,          
 };
 
-/* Reducer pour gérer les actions d'authentification */
+
 export const authReducer = (state = initialState, action) => {
     switch (action.type) {
-        // Connexion réussie
+       
         case LOGIN_SUCCESS:
             return {
                 ...state,
@@ -21,7 +21,7 @@ export const authReducer = (state = initialState, action) => {
                 error: null,
             };
         
-        // Échec de connexion
+       
         case LOGIN_FAIL:
             return {
                 ...state,
@@ -30,11 +30,11 @@ export const authReducer = (state = initialState, action) => {
                 error: action.payload,
             };
 
-        // Déconnexion
+        
         case LOGOUT:
             return initialState;
 
-        // Retourne l'état par défaut
+       
         default:
             return state;
     }
